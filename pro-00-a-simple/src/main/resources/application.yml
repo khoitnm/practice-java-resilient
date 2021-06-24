@@ -1,0 +1,13 @@
+server:
+  port: 8001
+
+# https://resilience4j.readme.io/docs/getting-started-3
+# https://resilience4j.readme.io/docs/circuitbreaker#create-and-configure-a-circuitbreaker
+resilience4j.circuitbreaker:
+  instances:
+    iam:
+      registerHealthIndicator: true
+    twilio:
+      registerHealthIndicator: true
+    pccApis:
+      registerHealthIndicator: true
