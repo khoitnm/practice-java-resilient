@@ -8,27 +8,27 @@ resilience4j:
     instances:
       # the name should match the constants in ResilientSupport.java
       hello:
-        maxAttempts: 3
+        maxAttempts: 4
         waitDuration: 1s
-#        enableExponentialBackoff: true
-#        exponentialBackoffMultiplier: 2
+        enableExponentialBackoff: true
+        exponentialBackoffMultiplier: 2
         retryExceptions:
-          - org.springframework.web.client.HttpClientErrorException.NotFound
-          - org.springframework.web.client.HttpClientErrorException
+#          - org.springframework.web.client.HttpClientErrorException.NotFound
+#          - org.springframework.web.client.HttpClientErrorException
           - org.springframework.web.client.RestClientException
-          - org.springframework.web.client.HttpServerErrorException
+#          - org.springframework.web.client.HttpServerErrorException
           - java.io.IOException
   #      ignoreExceptions:
   #        - io.github.robwin.exception.BusinessException
 
-#  circuitbreaker:
-#    instances:
-#      iam:
-#        registerHealthIndicator: true
-#      twilio:
-#        registerHealthIndicator: true
-#      pccApis:
-#        registerHealthIndicator: true
+  circuitbreaker:
+    instances:
+      iam:
+        registerHealthIndicator: true
+      twilio:
+        registerHealthIndicator: true
+      pccApis:
+        registerHealthIndicator: true
 
 
 echo:
