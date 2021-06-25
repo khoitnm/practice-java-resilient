@@ -13,4 +13,4 @@ resilience4j.circuitbreaker:
       registerHealthIndicator: true
 
 echo:
-  host: localhost:8001
+  host: http://localhost:8001
