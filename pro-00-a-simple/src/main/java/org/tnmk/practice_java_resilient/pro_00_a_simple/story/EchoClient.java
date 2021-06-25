@@ -9,19 +9,21 @@ import org.springframework.web.client.RestTemplate;
 
 @Slf4j
 @Service
-public class ServiceBClient {
+public class EchoClient {
 
-  @Value("${serviceB.host}")
-  private String serviceBHost;
+  @Value("${echo.host}")
+  private String echoHost;
 
   private final RestTemplate restTemplate;
 
-  public ServiceBClient(RestTemplateBuilder restTemplateBuilder) {
+  public EchoClient(RestTemplateBuilder restTemplateBuilder) {
     this.restTemplate = restTemplateBuilder.build();
   }
 
-  public void writeHello() {
-    ResponseEntity<String> responseEntity = restTemplate.getForEntity(serviceBHost + "/hello", String.class);
-    log.info("Response from serviceB: {}", responseEntity.getBody());
+  public String echo(String message) {
+    ResponseEntity<String> responseEntity = restTemplate.getForEntity(echoHost + "/echo?message=" + message, String.class);
+    String responseMessage = responseEntity.getBody();
+    log.info("Response from echo: {}", responseMessage);
+    return responseMessage;
   }
 }

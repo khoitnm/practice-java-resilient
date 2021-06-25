@@ -12,5 +12,5 @@ resilience4j.circuitbreaker:
     pccApis:
       registerHealthIndicator: true
 
-serviceB:
+echo:
   host: localhost:8001
