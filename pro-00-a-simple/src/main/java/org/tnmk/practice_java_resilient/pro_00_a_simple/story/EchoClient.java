@@ -1,5 +1,6 @@
 package org.tnmk.practice_java_resilient.pro_00_a_simple.story;
 
+import io.github.resilience4j.retry.annotation.Retry;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.web.client.RestTemplateBuilder;
@@ -20,6 +21,7 @@ public class EchoClient {
     this.restTemplate = restTemplateBuilder.build();
   }
 
+  @Retry(name = ResilientSupport.SERVICE_HELLO)
   public String echo(String message) {
     ResponseEntity<String> responseEntity = restTemplate.getForEntity(echoHost + "/echo?message=" + message, String.class);
     String responseMessage = responseEntity.getBody();
