@@ -1,4 +1,4 @@
-package org.tnmk.practice_java_resilient.pro_00_a_simple.story;
+package org.tnmk.practice_java_resilient.pro_00_b_simple.story;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

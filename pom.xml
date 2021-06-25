@@ -10,6 +10,7 @@
 
     <modules>
         <module>pro-00-a-simple</module>
+        <module>pro-00-b-simple</module>
     </modules>
 
     <properties>
