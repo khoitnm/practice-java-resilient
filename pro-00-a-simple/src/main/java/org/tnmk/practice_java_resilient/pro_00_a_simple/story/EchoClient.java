@@ -23,6 +23,7 @@ public class EchoClient {
 
   @Retry(name = ResilientSupport.SERVICE_HELLO)
   public String echo(String message) {
+    log.info("Trigger echo");
     ResponseEntity<String> responseEntity = restTemplate.getForEntity(echoHost + "/echo?message=" + message, String.class);
     String responseMessage = responseEntity.getBody();
     log.info("Response from echo: {}", responseMessage);
