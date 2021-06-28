@@ -3,6 +3,7 @@ package org.tnmk.practice_java_resilient.pro_00_b_simple.story;
 import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -22,5 +23,14 @@ public class EchoController {
   @GetMapping("/echo/internal-error")
   public String echoInternalError() {
     throw new UnsupportedOperationException("Internal error");
+  }
+
+  @CircuitBreaker(name = ResilientSupport.SERVICE_ECHO)
+  @GetMapping("/echo/slow/{seconds}")
+  public String echoSlow(@PathVariable Integer seconds) throws InterruptedException {
+    log.info("Start Slow {}", seconds);
+    Thread.sleep(seconds * 1000);
+    log.info("End Slow {}", seconds);
+    return "Slow";
   }
 }

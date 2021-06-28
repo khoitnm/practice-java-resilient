@@ -9,3 +9,12 @@ resilience4j:
       # the name should match values in ResilientSupport.java
       echo:
         registerHealthIndicator: true
+        slowCallDurationThreshold: 1s # (in milliseconds). When a call is longer than this, it'll be considered as slow.
+        automaticTransitionFromOpenToHalfOpenEnabled: true # Default is false
+        minimumNumberOfCalls: 2 # Default 100
+        slidingWindowType: COUNT_BASED
+        slidingWindowSize: 2 # (value in seconds or in counting number) Default is 100
+        waitDurationInOpenState: 10s # Default is 60000, after this time, the circuit breaker will become half-open
+
+
+

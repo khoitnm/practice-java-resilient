@@ -11,7 +11,7 @@ resilience4j:
         maxAttempts: 4
         waitDuration: 1s
         enableExponentialBackoff: true
-        exponentialBackoffMultiplier: 2
+        exponentialBackoffMultiplier: 1.5
         retryExceptions:
 #          - org.springframework.web.client.HttpClientErrorException.NotFound
 #          - org.springframework.web.client.HttpClientErrorException
@@ -32,4 +32,4 @@ resilience4j:
 
 
 echo:
-  host: http://localhost:8001
+  host: http://localhost:8002
