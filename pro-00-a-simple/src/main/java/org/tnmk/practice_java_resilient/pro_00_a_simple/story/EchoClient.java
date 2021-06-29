@@ -7,6 +7,7 @@ import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
+import org.tnmk.practice_java_resilient.pro_00_a_simple.common.resilient.ResilientSupport;
 
 @Slf4j
 @Service
@@ -30,7 +31,7 @@ public class EchoClient {
     return responseMessage;
   }
 
-//  @Retry(name = ResilientSupport.SERVICE_HELLO)
+  @Retry(name = ResilientSupport.SERVICE_HELLO)
   public String echoWithServerInternalError() {
     log.info("echoWithServerInternalError");
     ResponseEntity<String> responseEntity = restTemplate.getForEntity(echoHost + "/echo/internal-error", String.class);
@@ -39,6 +40,7 @@ public class EchoClient {
     return responseMessage;
   }
 
+  @Retry(name = ResilientSupport.SERVICE_HELLO)
   public String echoSlow(int slowSeconds) {
     log.info("echoSlow");
     ResponseEntity<String> responseEntity = restTemplate.getForEntity(echoHost + "/echo/slow/"+slowSeconds, String.class);
