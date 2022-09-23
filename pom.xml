@@ -9,6 +9,7 @@
     <packaging>pom</packaging>
 
     <modules>
+        <module>pro-00-circuit-breaker-simple</module>
         <module>pro-00-a-simple</module>
         <module>pro-00-b-simple</module>
     </modules>
