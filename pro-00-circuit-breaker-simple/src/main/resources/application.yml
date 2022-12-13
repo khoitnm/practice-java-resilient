@@ -1,5 +1,5 @@
 server:
-  port: 8001
+  port: 8080
 
 # https://resilience4j.readme.io/docs/getting-started-3
 # https://resilience4j.readme.io/docs/circuitbreaker#create-and-configure-a-circuitbreaker
