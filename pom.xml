@@ -9,9 +9,10 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>pro-00-circuit-breaker-simple</module>
+        <module>pro-00-java-resilient4j-simple-retry</module>
         <module>pro-00-spring-resilient4j-service-a</module>
         <module>pro-00-spring-resilient4j-service-b</module>
+        <module>pro-00-spring-resilient4j-simple-circuit-breaker</module>
     </modules>
 
     <properties>
