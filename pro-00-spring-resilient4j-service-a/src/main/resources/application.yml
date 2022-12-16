@@ -3,7 +3,7 @@ server:
 
 # https://resilience4j.readme.io/docs/getting-started-3
 # https://resilience4j.readme.io/docs/circuitbreaker#create-and-configure-a-circuitbreaker
-#resilience4j:
+resilience4j:
 #  retry:
 #    instances:
       # the name should match the constants in ResilientSupport.java

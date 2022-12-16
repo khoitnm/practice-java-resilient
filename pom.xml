@@ -13,6 +13,8 @@
         <module>pro-00-spring-resilient4j-service-a</module>
         <module>pro-00-spring-resilient4j-service-b</module>
         <module>pro-00-spring-resilient4j-simple-circuit-breaker</module>
+        <module>pro-01-spring-resilient4j-main-module</module>
+        <module>pro-01-spring-resilient4j-submodule</module>
     </modules>
 
     <properties>

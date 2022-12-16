@@ -1,0 +1,2 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  org.tnmk.practicejson.pro01springresilient4jsubmodule.Pro01SpringResilient4jSubmoduleAutoConfig

@@ -1,1 +1,13 @@
 server.port: 8080
+
+resilience4j:
+  retry:
+    configs:
+      default:
+        maxAttempts: 4
+        waitDuration: 1s
+        enableExponentialBackoff: false
+        exponentialBackoffMultiplier: 2
+        # To make it safe when doing exponentialBackoff, we should apply truncatedExponentialBackoff:
+        # https://cloud.google.com/iot/docs/how-tos/exponential-backoff
+        exponential-max-wait-duration: 1m

@@ -13,15 +13,32 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>11</java.version>
 
-        <springframework.boot.version>2.6.4</springframework.boot.version>
+        <springframework.boot.version>2.7.5</springframework.boot.version>
+        <resilience4j-spring-boot2.version>1.7.0</resilience4j-spring-boot2.version>
     </properties>
 
-
     <dependencies>
+        <dependency>
+            <groupId>org.tnmk.skeleton.practice-json.pro-01-spring-resilient4j-submodule</groupId>
+            <artifactId>pro-01-spring-resilient4j-submodule</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
+
+        <!-- RESILIENT: BEGIN -->
+        <dependency>
+            <groupId>io.github.resilience4j</groupId>
+            <artifactId>resilience4j-spring-boot2</artifactId>
+            <version>${resilience4j-spring-boot2.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-aop</artifactId>
+        </dependency>
+        <!-- RESILIENT: END -->
 
         <dependency>
             <groupId>org.projectlombok</groupId>
